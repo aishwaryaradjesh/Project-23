@@ -17,7 +17,8 @@ function setup() {
 	rectMode(CENTER);
 
 	packageBody_options = {
-		restitution : 0.5
+		restitution : 0.5,
+		Matter.Body.setStatic(packageBody, true);
 	}
 	
 
@@ -81,6 +82,18 @@ function keyPressed() {
     Matter.Body.setStatic(packageBody, false);
     
   }
+	
+if (keyCode === LEFT_ARROW){
+ helicopterSprite.x=helicopterSprite.x-20; 
+	translation={x:-20,y:0} 
+	Matter.Body.translate(packageBody, translation)
+}
+	
+	if (keyCode === LEFT_ARROW) {
+		helicopterSprite.x=helicopterSprite.x-20;
+		translation={x:-20,y:0} 
+		Matter.Body.translate(packageBody, translation) 
+	}
 }
 
 
